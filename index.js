@@ -17,6 +17,7 @@ app.use(cors())
 app.get('/form/list',formCltr.list)
 app.post('/form/create',formCltr.add )
 app.put('/form/input',formCltr.addInput)
+app.delete('/form/remove/:id',formCltr.destroy)
 
 app.listen(port,() => {
     console.log('server running on port', port )

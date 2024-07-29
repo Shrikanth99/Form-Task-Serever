@@ -81,4 +81,14 @@ formCltr.addInput = async function(req,res){
     }
 }
 
+formCltr.destroy = async function(req,res){
+    const id = req.params.id
+    try {
+        const data = await Formtask.findOneAndDelete({_id : id})
+        res.json(data)
+    } catch (e) {
+        res.status(500).json(e.message)
+    }
+}
+
 module.exports = formCltr
